@@ -1,0 +1,134 @@
+/* MAIN */
+body {
+  margin: 0;
+  padding: 50px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+  background: #37383d;
+}
+
+
+/* Text */
+h1 {
+    color: #b6b6b8;
+}
+
+h1:hover {
+    color: #FFF;
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 40px;
+  text-align: center;
+  letter-spacing: -2px;
+  color: #b6b6b8;
+}
+
+h2:hover {
+    color: #FFF;
+}
+
+h3 {
+  font-size: 1.7em;
+  font-weight: 100;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: -1px;
+  color: #b6b6b8;
+}
+
+h3:hover {
+    color: #FFF;
+}
+
+h4 {
+  font-size: 1.2em;
+  font-weight: 100;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: -1px;
+  color: #b6b6b8;
+}
+
+h4:hover {
+    color: #FFF;
+}
+
+p {
+    color: #b6b6b8;
+}
+
+/* Widget Containers */
+.chart-container {
+    padding: 30px;
+    margin: 0px;
+    background-color: #59595c;
+    border-radius: 3px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 85%;
+    width: 95%;
+}
+
+.chart-container:hover {
+  background-color: #6a6a6e;
+}
+
+.pretty-container {
+    padding: 30px;
+    margin-top: 30px;
+    background-color: #59595c;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 45%;
+}
+
+.pretty-container:hover {
+    background-color: #6a6a6e;
+}
+
+
+/* Specific Container Settings */
+#buy-crypto {
+    background-color: #ab3f37;
+
+}
+
+#buy-crypto:hover {
+    background-color: #b34a42;
+}
+
+#settings {
+    color: #b6b6b8;
+    background-color: #4b9140;
+
+}
+
+#settings:hover {
+    background-color: #5f9956;
+}
+
+#balances {
+    width: 40%;
+    height: 100%;
+    float:right;
+    padding: 30px;
+    padding-top: 0px;
+    margin-top: 30px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #324e94;
+}
+
+#balances:hover {
+    background-color: #3e5796;
+}
+
+#notifications {
+    background-color: #694c91;
+    color: #b6b6b8;
+}
+
+#notifications:hover {
+    background-color: #6f5691;
+}

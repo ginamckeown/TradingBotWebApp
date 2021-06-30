@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>CryptoWebApp</title>
+        <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+        <link href="../static/css/main.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <h1>{{ title }}</h1>
+
+        <div class="chart-container" id="chart">
+            {{ symbol }}
+        </div>
+
+
+        <div class="" id="balances">
+            <h2>Balances</h2>
+            <p>BTC USD 0.0</p>
+
+            <table>
+                {% for balance in my_balances %}
+                <tr>
+                    <td>
+                        {{ balance['asset'] }}
+                    </td>
+                    <td>
+                        {{ balance['free'] }}
+                    </td>
+                </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="trades"></div>
+
+        <div class="pretty-container" id="buy-crypto">
+            <h3><strong>Buy Crypto</strong></h3>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <div style="padding: 10px; margin-bottom: 10px; background: pink; border: solid red 1px; color: red;">
+
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+
+                {% endif %}
+            {% endwith %}
+
+            <form action="/buy" method="post">
+                <input type="text" id="quantity" name="quantity" placeholder="ex: 0.001" />
+                <select id="symbol" name="symbol">
+                    {% for symbol in symbols %}
+                        <option>{{ symbol['symbol'] }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" name="buy" value="buy" />
+            </form>
+        </div>
+
+        <div class="pretty-container" id="settings">
+            <h3><strong>Settings</strong></h3>
+
+            <div>
+                <div><input type="checkbox" /> Manual RSI Selection</div>
+                <div><input type="text" id="rsi_length" name="rsi_length" placeholder="14" />
+                Period</div>
+                <div><input type="text" id="rsi_overbought" name="rsi_overbought" placeholder="70" />
+                Overbought</div>
+                <div><input type="text" id="rsi_oversold" name="rsi_oversold" placeholder="30" />
+                Oversold</div>
+
+            </div>
+        </div>
+
+
+        <div class="pretty-container" id="notifications">
+            <h4><strong>Notifications</strong></h4>
+
+            <div>
+                <div>
+                    <input type="checkbox" id="message_notif" name="message_notif" />
+                    Receive Text Alerts
+                </div>
+                <div>
+                    <input type="checkbox" id="email_notif" name="email_notif" />
+                    Receive Email Alerts
+                </div>
+                <div>
+                    <input type="checkbox" id="auto_trade" name="auto_trade"/>
+                    Auto Trade
+                </div>
+
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='chart.js') }}"></script>
+    </body>
+</html>
